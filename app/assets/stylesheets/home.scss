@@ -1,3 +1,66 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+#home-nav {
+    background-color: rgb(155, 155, 155);
+}
+
+.current-user {
+    color: #fff;
+    padding: 20px;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.sidebar {
+    position: fixed;
+    top: 50px;
+    width: 200px;
+    height: 100%;
+    background: rgba(0, 77, 77, .9);
+    padding: 20px 0
+}
+
+ul {
+    padding-bottom: 20px
+}
+
+ul li a img {
+    background: #66BB6A;
+    top: 0;
+    border: none;
+    width: 20px
+}
+
+.sidebar ul li {
+    padding: 15px
+}
+
+.sidebar ul li a {
+    color: #fff;
+    display: block
+}
+
+.sidebar ul li a .fas {
+    width: 30px;
+    color: #bdb8d7
+}
+
+i.fas.fa-folder-open:hover,
+i.fas.fa-folder-plus:hover,
+i.fas.fa-id-badge:hover,
+i.fas.fa-sign-out-alt:hover {
+    color: #304FFE
+}
+
+.sidebar ul li a .far {
+    width: 30px;
+    color: #bdb8d7 
+}
+
+.sidebar ul li:hover {
+    background: #000
+}
+
+.sidebar ul li a:hover {
+    text-decoration: none
+}
