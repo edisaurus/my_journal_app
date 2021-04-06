@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     protected
 
         def configure_permitted_parameters
-            # perform a sign-up along with the username data
+            # perform a sign-up along with the signin data
             devise_parameter_sanitizer.permit(:sign_in, keys: [:signin])
             devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, 
                                                                :last_name, 

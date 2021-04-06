@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
     before_action :get_category
-    before_action :set_task, only: [:show, :edit, :update, :destroy]
+    before_action :set_task, only: %i[ show edit update destroy ]
 
     def index
         @tasks = @category.tasks
@@ -52,7 +52,7 @@ class TasksController < ApplicationController
     private
 
         def get_category
-            @category = Category.find(params[:category_id])
+            @category = current_user.categories.find(params[:category_id])
         end
 
         def set_task
@@ -60,6 +60,6 @@ class TasksController < ApplicationController
         end
 
         def task_params
-            params.require(:task).permit(:name, :description, :date_start, :date_end, :category_id)
+            params.require(:task).permit(:name, :description, :start_date, :end_date, :category_id)
         end
 end
