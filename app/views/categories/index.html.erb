@@ -1,0 +1,24 @@
+<%= render 'home/dashboard' %>
+
+<div class="categories-dashboard">
+    <p id="notice"><%= notice %></p>
+    <h1>Categories</h1>
+    <div id="category-flex">
+        <% @categories.each do |category| %>
+            <div id="category-list">
+                <h3 class="category-name"><i><%= category.name %></i></h3>
+                <hr>
+                <h6><b>Description</b></h6>
+                <p><%= category.description %></p>
+                <h6><b>Date Created</b></h6>
+                <span><%= category.date_created.strftime("%B %d, %Y") %> - </span>
+                <span><%= category.date_created.strftime("%I:%M %p") %></span>
+                <div class="form-inline">
+                    <%= link_to 'SHOW TASKS', category_tasks_path(category), class:'btn btn-info' %>
+                    <%= link_to 'EDIT', edit_category_path(category), class:'btn btn-primary' %>
+                    <%= link_to 'DELETE', category, method: :delete, data: { confirm: 'Delete this Category?'}, class:'btn btn-danger'%>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="sign-up-form">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="group">
+    <%= f.label :first_name, class:'label' %>
+    <%= f.text_field :first_name,
+                     id: 'user', 
+                     class:'input',
+                     placeholder:'Create First name' %>
+  </div>
+  <div class="group">
+    <%= f.label :last_name, class:'label' %>
+    <%= f.text_field :last_name,
+                     id: 'user',
+                     class:'input',
+                     placeholder:'Create Last name' %>
+  </div>
+  <div class="group">
+    <%= f.label :username, class:'label' %>
+    <%= f.text_field :username,
+                     id: 'user',
+                     class:'input',
+                     placeholder:'Create Username' %>
+  </div>
+  <div class="group">
+    <%= f.label :email, class:'label' %>
+    <%= f.email_field :email, 
+                      autofocus: true, 
+                      autocomplete: "email",
+                      id:'pass',
+                      class:'input',
+                      placeholder:'Enter email address' %>
+  </div>
+  <div class="group">
+    <%= f.label :password, class:'label' %>
+    <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %>
+    <%= f.password_field :password,
+                         autocomplete: "new-password",
+                         id: 'pass',
+                         class:'input',
+                         placeholder:'Create password' %>
+  </div>
+  <div class="group">
+    <%= f.label :password_confirmation, class:'label' %>
+    <%= f.password_field :password_confirmation, 
+                         autocomplete: "new-password",
+                         id:'pass',
+                         class:'input',
+                         placeholder:'Repeat password' %>
+  </div>
+  <div class="group">
+    <%= f.submit "Sign Up", class:'button' %>
+  </div>
+    <%- if controller_name != 'sessions' %>
+      <%= link_to "Already have an account?", new_session_path(resource_name) %><br />
+    <% end %>
+  <% end %>    
+</div>

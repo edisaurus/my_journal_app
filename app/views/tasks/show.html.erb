@@ -1,0 +1,27 @@
+<%= render 'home/dashboard' %>
+
+<div id="category" class="form-group">
+    <p id="notice"><%= notice %></p>
+
+    <div class="form-group">
+        <strong>Task name:</strong>
+        <%= @task.name %>
+    </div>
+
+    <div class="form-group">
+        <strong>Description:</strong>
+        <%= @task.description %>
+    </div>
+
+    <div class="form-group">
+        <strong>Date Start:</strong>
+        <%= @task.start_date.strftime("%B %d, %Y") %>
+    </div>
+
+    <div class="form-group">
+        <strong>Date End:</strong>
+        <%= @task.end_date.strftime("%B %d, %Y") %>
+    </div>
+
+    <%= link_to 'Back', category_tasks_path, class: 'btn btn-dark' %>
+</div>
