@@ -18,6 +18,8 @@ class User < ApplicationRecord
     .first
   end
        
-         validates :first_name, :last_name, :email, :username, :password, :password_confirmation, presence: true
-         validates :username, uniqueness: { case_sensitive: false }
+  validates :first_name, :last_name, :email, :username, :password, :password_confirmation, presence: true
+  validates :username, :email, uniqueness: { case_sensitive: false }
+  has_many :categories, dependent: :destroy
+  has_many :tasks, through: :categories
 end
