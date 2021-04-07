@@ -12,24 +12,26 @@
                 <%= notice %>
                 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                 <div class="group">
+                  <%= f.label :email, class: 'label' %>
                   <%= f.text_field :signin, 
                                     autofocus: true, 
                                     class: 'input',
                                     placeholder: 'Email, Username, First or Last name' %>
                 </div>
                 <div class="group">
+                  <%= f.label :password, class: 'label' %>
                   <%= f.password_field :password, 
                                         class: 'input',
                                         placeholder: 'Password' %> 
                 </div>
                 <div class="group">
                   <% if devise_mapping.rememberable? %>
-                  <%= f.check_box :remember_me, checked:'checked' %>
-                  <%= f.label :remember_me %>
+                  <%= f.check_box :remember_me, checked:'checked', class:'check' %>
+                  <%= f.label :remember_me, class: 'label' %>
                   <% end %>
                 </div>
                 <div class="group">
-                  <%= f.submit "Sign In", class:'button' %> 
+                  <%= f.submit "LOGIN", class:'button' %> 
                 </div>
                 <div>
                   <div class="col-md-12">
