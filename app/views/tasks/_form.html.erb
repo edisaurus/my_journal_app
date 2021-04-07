@@ -1,42 +1,32 @@
 <div class="form-group">
-    <%= form_with model: [@category, @task], local: true do |f| %>
-        <p>
-            <% if @task.errors.any? %>
-                <ul>
-                    <% @task.errors.full_messages.each do |message| %>
-                        <li><%= message %></li>
-                    <% end %>
-                </ul>
-            <% end %>
-        </p>
-
-        <div class="form-group">
-            <%= f.label :name %>
-            <%= f.text_field :name, 
-                             class:'form-control' %>
-        </div>
-
-        <div class="form-group">
-            <%= f.label :description %>
-            <%= f.text_area :description, 
-                            class:'form-control' %>
-        </div>
-
-        <div class="form-group">
-            <%= f.label :start_date %>
-            <%= f.date_field :start_date, 
-                             class:'form-control' %>
-        </div>
-
-        <div class="form-group">
-            <%= f.label :end_date %>
-            <%= f.date_field :end_date, 
-                             class:'form-control' %>
-        </div>
-
-        <div class="submit">
-            <%= f.submit "save", class:'btn btn-success' %>
-        </div>
-
-    <% end %>
+  <%= form_with model: [@category, @task], local: true do |f| %>
+    <p>
+      <% if @task.errors.any? %>
+      <ul>
+        <% @task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+      <% end %>
+    </p>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class:'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_area :description, class:'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :start_date %>
+      <%= f.date_field :start_date, class:'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :end_date %>
+      <%= f.date_field :end_date, class:'form-control' %>
+    </div>
+    <div class="submit">
+      <%= f.submit "save", class:'btn btn-success' %>
+    </div>
+  <% end %>
 </div>

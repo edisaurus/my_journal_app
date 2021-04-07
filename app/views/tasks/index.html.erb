@@ -1,31 +1,28 @@
 <%= render 'home/dashboard'%>
-
 <div class="task-dashboard">
-    <h1><%= @category.name %></h1>
-    <p id="notice"><%= notice %></p>
-
-    <table>
-        <thead>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Start Date</th>
-            <th>End Date</th>
-            <th colspan="4"><th>
-        </thead>
-
-        <tbody>
-            <% @tasks.each do |task| %>
-                <tr>
-                    <td><%= task.name %></td>
-                    <td><%= task.description %></td>
-                    <td><%= task.start_date.strftime("%B %d, %Y") %></td>
-                    <td><%= task.end_date.strftime("%B %d, %Y") %></td>
-                    <td><%= link_to 'EDIT', edit_category_task_path(@category, task), class:'btn btn-primary' %></td>
-                    <td><%= link_to 'DELETE', [@category, task], method: :delete, data: { confirm: 'Remove task?' }, class:'btn btn-danger' %></td>
-                </tr>
-            <% end %>
-        <tbody>
-    </table>
-    <br>
-    <%= link_to 'Add Task', new_category_task_path(@category), class:'btn btn-success' %>
+  <h1><%= @category.name %></h1>
+  <p id="notice"><%= notice %></p>
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th colspan="4"><th>
+      </thead>
+    <tbody>
+      <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.name %></td>
+        <td><%= task.description %></td>
+        <td><%= task.start_date.strftime("%B %d, %Y") %></td>
+        <td><%= task.end_date.strftime("%B %d, %Y") %></td>
+        <td><%= link_to 'EDIT', edit_category_task_path(@category, task), class:'btn btn-primary' %></td>
+        <td><%= link_to 'DELETE', [@category, task], method: :delete, data: { confirm: 'Remove task?' }, class:'btn btn-danger' %></td>
+      </tr>
+        <% end %>
+    <tbody>
+  </table>
+  <br>
+  <%= link_to 'Add Task', new_category_task_path(@category), class:'btn btn-success' %>
 </div>

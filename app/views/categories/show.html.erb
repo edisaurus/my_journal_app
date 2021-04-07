@@ -1,22 +1,18 @@
 <div id="category class="form-group">
-    <p id="notice"><%= notice %></p>
-
-    <div class="form-group">
-        <strong>Category name:</strong>
-        <%= @category.name %>
-    </div>
-
-    <div class="form-group">
-        <strong>Description:</strong>
-        <%= @category.description %>
-    </div>
-
-    <div class="form-group">
-        <strong>Date Created:</strong>
-        <%= @category.date_created %>
-    </div>
-
-    <%= link_to 'Edit', edit_category_path(@category) %>
-    <br>
-    <%= link_to 'Back', categories_path %>
+  <p id="notice"><%= notice %></p>
+  <div class="form-group">
+    <strong>Category name:</strong>
+    <%= @category.name %>
+  </div>
+  <div class="form-group">
+    <strong>Description:</strong>
+    <%= @category.description %>
+  </div>
+  <div class="form-group">
+    <strong>Date Created:</strong>
+    <%= @category.date_created %>
+  </div>
+  <%= link_to 'Edit', edit_category_path(@category) %>
+  <br>
+  <%= link_to 'Back', categories_path %>
 </div>
