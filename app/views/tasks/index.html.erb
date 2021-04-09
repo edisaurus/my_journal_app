@@ -18,7 +18,7 @@
         <td><%= task.description %></td>
         <td><%= task.start_date.strftime("%B %d, %Y") %></td>
         <td><%= task.end_date.strftime("%B %d, %Y") %></td>
-        <td><%= task.accomplished %></td>
+        <td><%= task.accomplished ? 'Yes' : 'No' %></td>
         <td><%= link_to 'EDIT', edit_category_task_path(@category, task), class:'btn btn-primary' %></td>
         <td><%= link_to 'DELETE', [@category, task], method: :delete, data: { confirm: 'Remove task?' }, class:'btn btn-danger' %></td>
       </tr>
