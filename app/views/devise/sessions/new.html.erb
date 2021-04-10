@@ -4,7 +4,7 @@
       <div class="login-box">
         <div class="login-snip"> 
           <input id="tab-1" type="radio" name="tab" class="sign-in" checked>
-          <label for="tab-1" class="tab">Login</label> 
+          <label for="tab-1" class="tab">Sign In</label>
           <input id="tab-2" type="radio" name="tab" class="sign-up">
           <label for="tab-2" class="tab">Sign Up</label>
             <div class="login-space">
@@ -16,7 +16,7 @@
                   <%= f.text_field :signin, 
                                     autofocus: true, 
                                     class: 'input',
-                                    placeholder: 'Email, Username, First or Last name' %>
+                                    placeholder: 'Email or Username' %>
                 </div>
                 <div class="group">
                   <%= f.label :password, class: 'label' %>
@@ -26,12 +26,12 @@
                 </div>
                 <div class="group">
                   <% if devise_mapping.rememberable? %>
-                  <%= f.check_box :remember_me, checked:'checked', class:'check' %>
-                  <%= f.label :remember_me, class: 'label' %>
+                  <%= f.check_box :remember_me, checked:'checked' %>
+                  <%= f.label :remember_me %>
                   <% end %>
                 </div>
                 <div class="group">
-                  <%= f.submit "LOGIN", class:'button' %> 
+                  <%= f.submit "SIGN IN", class:'button' %> 
                 </div>
                 <div>
                   <div class="col-md-12">

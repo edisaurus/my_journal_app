@@ -11,15 +11,13 @@ class User < ApplicationRecord
     signin = conditions.delete(:signin)
     where(conditions)
     .where(["lower(username) = :value OR 
-            lower(email) = :value OR 
-            lower(first_name) = :value OR 
-            lower(last_name) = :value", 
+            lower(email) = :value", 
             { value: signin.to_s.downcase.gsub(/\s+/, '') }])
     .first
   end
        
-  validates :first_name, :last_name, :email, :username, :password, :password_confirmation, presence: true
-  validates :username, :email, uniqueness: { case_sensitive: false }
+  validates :email, :username, :password, :password_confirmation, presence: true
+  validates :username, uniqueness: { case_sensitive: false }
   has_many :categories, dependent: :destroy
   has_many :tasks, through: :categories
 end

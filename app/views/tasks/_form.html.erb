@@ -19,16 +19,13 @@
     </div>
     <div class="form-group">
       <%= f.label :start_date %>
-      <%= f.date_field :start_date, class:'form-control' %>
+      <%= f.date_field :start_date, max: task.end_date,  class:'form-control' %>
     </div>
     <div class="form-group">
       <%= f.label :end_date %>
-      <%= f.date_field :end_date, class:'form-control' %>
+      <%= f.date_field :end_date, min: task.start_date, class:'form-control' %>
     </div>
-    <div class="form-group">
-      <%= f.check_box :accomplished %>
-      <%= f.label :accomplished %>
-    </div>
+    
     <div class="submit">
       <%= f.submit "save", class:'btn btn-success' %>
     </div>
