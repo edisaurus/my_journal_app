@@ -1,24 +1,31 @@
-# README
+# My Journal App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails task management application
 
-Things you may want to cover:
+#### Version
 
-* Ruby version
+```
+  Ruby 2.7.2
+  Rails 6.1.3.2
+  Bootsrap
+  Node v14.4.0
+  Yarn 1.22.4
+```
 
-* System dependencies
+#### Getting started
+To get started with the app, clone the repo and then install the needed gems:
+```
+$ bundle install
+```
+Next, migrate the database:
+```
+$ rails db:migrate
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Finally, run the test suite to verify that everything is working correctly:
+```
+$ rspec spec
+```
+If the test suite passes, you'll be ready to run the app in a local server:
+```
+$ rails server
