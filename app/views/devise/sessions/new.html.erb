@@ -1,4 +1,6 @@
-<div class="row">
+<%
+=begin%>
+ <div class="row">
   <div class="col-md-6 mx-auto p-0">
     <div class="card">
       <div class="login-box">
@@ -54,6 +56,65 @@
       </div>
     </div>
   </div>
-</div>
+</div> 
+<%
+=end%>
+
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div  class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid" alt="Work Image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+            <p class="h1 lead fw-normal mb-0 me-3 text-center">Storify
+              <small class="text-muted">your daily logbook</small>
+            </p>
+          </div>
+
+          <div class="divider d-flex align-items-center my-4">
+            <p class="text-center fw-bold mx-3 mb-0">Sign in</p>
+          </div>
+
+          <div class="form-outline mb-4">
+            <%= f.text_field :signin, 
+                              autofocus: true, 
+                              class: 'form-control form-control-lg',
+                              placeholder: 'Email or username' %>
+          </div>
+          <div class="form-outline mb-3">
+            <%= f.password_field :password, 
+                                  class: 'form-control form-control-lg',
+                                  placeholder: 'Password' %>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="form-check mb-0">
+              <% if devise_mapping.rememberable? %>
+              <%= f.check_box :remember_me, checked:'checked', class: 'form-check-input me-2' %>
+              <%= f.label :remember_me, class: 'form-check-label' %>
+              <% end %>
+            </div>
+            <a href="#!" class="text-body">Forgot password?</a>
+          </div>
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <%= f.submit "SIGN IN", class:'btn btn-primary btn-lg' %>
+            <p class="small fw-bold mt-2 pt-1 mb-0">
+              Don't have an account? 
+              <a href="#!" class="link-danger">Register</a>
+            </p> 
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+    
+    <div class="text-white mb-3 mb-md-0">
+      Copyright @ 2021. All rights reserved.
+    </div>
+  </div>
+</section>
 
 
