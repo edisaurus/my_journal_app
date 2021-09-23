@@ -1,0 +1,42 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+    <p class="h1 lead fw-normal mb-0 me-3 text-center">Storify
+      <small class="text-muted">your daily logbook</small>
+    </p>
+  </div>
+
+  <div class="divider d-flex align-items-center my-4">
+    <p class="text-center fw-bold mx-3 mb-0">Sign In</p>
+  </div>
+
+  <div class="form-outline mb-4">
+    <%= f.text_field :signin, 
+                      autofocus: true, 
+                      class: 'form-control form-control-lg',
+                      placeholder: 'Email or username' %>
+  </div>
+
+  <div class="form-outline mb-3">
+    <%= f.password_field :password, 
+                          class: 'form-control form-control-lg',
+                          placeholder: 'Password' %>
+  </div>
+
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="form-check m-0">
+      <% if devise_mapping.rememberable? %>
+      <%= f.check_box :remember_me, checked:'checked', class: 'form-check-input me-2' %>
+      <%= f.label :remember_me, class: 'form-check-label' %>
+      <% end %>
+    </div>
+  </div>
+  <%= render "devise/shared/forgot_password" %>
+
+  <div class="text-center text-lg-start mt-4 pt-2">
+    <%= f.submit "SIGN IN", class:'btn btn-primary btn-lg' %>
+    <p class="small fw-bold mt-2 pt-1 mb-0">
+      Don't have an account? 
+      <a href="#!" class="link-danger"><%= render "devise/shared/register_links" %></a>
+    </p> 
+  </div>
+<% end %>
