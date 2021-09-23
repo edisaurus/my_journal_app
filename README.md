@@ -7,7 +7,7 @@ Ruby on Rails task management application
 ```
   Ruby 2.7.2
   Rails 6.1.3.2
-  Bootsrap
+  Bootstrap
   Node v14.4.0
   Yarn 1.22.4
 ```
